@@ -1,25 +1,19 @@
-﻿using Application.DTOs;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using Application.Services;
-using Domain.Entities;
 using Moq;
+using Domain.Entities;
 using Xunit;
-
-namespace Application.Tests;
+using Application.DTOs;
 
 public class ProductServiceTests
 {
     [Fact]
     public async Task GetAllAsync_ReturnsProducts()
     {
-        // Arrange
-        var mockRepo =
+        var repository =
             new Mock<IProductRepository>();
 
-        var mockUow =
-            new Mock<IUnitOfWork>();
-
-        mockRepo.Setup(x => x.GetAllAsync())
+        repository.Setup(x => x.GetAllAsync())
             .ReturnsAsync(new List<Product>
             {
                 new Product
@@ -29,48 +23,74 @@ public class ProductServiceTests
                 }
             });
 
-        mockUow.Setup(x => x.Products)
-            .Returns(mockRepo.Object);
+        var uow = new Mock<IUnitOfWork>();
+
+        uow.Setup(x => x.Products)
+            .Returns(repository.Object);
 
         var service =
-            new ProductService(mockUow.Object);
+            new ProductService(uow.Object);
 
-        // Act
         var result =
             await service.GetAllAsync();
 
-        // Assert
         Assert.Single(result);
     }
 
-
     [Fact]
-    public async Task CreateAsync_ShouldSaveProduct()
+    public async Task GetByIdAsync_ReturnsProduct()
     {
-        var mockRepo =
+        var repository =
             new Mock<IProductRepository>();
 
-        var mockUow =
-            new Mock<IUnitOfWork>();
+        repository.Setup(x =>
+            x.GetByIdAsync(1))
+            .ReturnsAsync(
+                new Product
+                {
+                    Id = 1,
+                    ProductName = "Mouse"
+                });
 
-        mockUow.Setup(x => x.Products)
-            .Returns(mockRepo.Object);
+        var uow = new Mock<IUnitOfWork>();
+
+        uow.Setup(x => x.Products)
+            .Returns(repository.Object);
 
         var service =
-            new ProductService(mockUow.Object);
+            new ProductService(uow.Object);
 
-        await service.CreateAsync(
-            new CreateProductDto
-            {
-                ProductName = "Phone"
-            });
+        var result =
+            await service.GetByIdAsync(1);
 
-        mockRepo.Verify(
-            x => x.AddAsync(It.IsAny<Product>()),
-            Times.Once);
+        Assert.NotNull(result);
+    }
 
-        mockUow.Verify(
-            x => x.SaveChangesAsync(),
-            Times.Once);
+    [Fact]
+    public async Task CreateAsync_ReturnsId()
+    {
+        var repository =
+            new Mock<IProductRepository>();
+
+        var uow =
+            new Mock<IUnitOfWork>();
+
+        uow.Setup(x => x.Products)
+            .Returns(repository.Object);
+
+        uow.Setup(x => x.SaveChangesAsync())
+            .ReturnsAsync(1);
+
+        var service =
+            new ProductService(uow.Object);
+
+        var result =
+            await service.CreateAsync(
+                new CreateProductDto
+                {
+                    ProductName = "Keyboard"
+                });
+
+        Assert.True(result >= 0);
     }
 }

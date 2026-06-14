@@ -12,3 +12,24 @@
 2026-06-14 16:07:13.040 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - 200 null text/javascript; charset=UTF-8 262.4842ms
 2026-06-14 16:07:14.017 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - null null
 2026-06-14 16:07:14.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 489.5713ms
+2026-06-14 16:25:36.993 +05:30 [INF] User profile is available. Using 'C:\Users\Shreyash Heshi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-06-14 16:25:42.440 +05:30 [INF] Now listening on: https://localhost:7169
+2026-06-14 16:25:42.442 +05:30 [INF] Now listening on: http://localhost:5274
+2026-06-14 16:25:42.448 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-14 16:25:42.450 +05:30 [INF] Hosting environment: Development
+2026-06-14 16:25:42.452 +05:30 [INF] Content root path: I:\Solution1\src\API
+2026-06-14 16:25:55.232 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/index.html - null null
+2026-06-14 16:26:03.032 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/index.html - 200 null text/html;charset=utf-8 7955.36ms
+2026-06-14 16:26:03.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_vs/browserLink - null null
+2026-06-14 16:26:03.424 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-14 16:26:03.458 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript; charset=utf-8 34.4845ms
+2026-06-14 16:26:03.704 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/_vs/browserLink - 200 null text/javascript; charset=UTF-8 280.6537ms
+2026-06-14 16:26:04.858 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - null null
+2026-06-14 16:26:07.223 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7169/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 2364.9355ms
+2026-06-14 16:27:52.321 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7169/api/Auth/refresh-token - application/json 36
+2026-06-14 16:27:53.295 +05:30 [INF] Executing endpoint 'API.Controllers.AuthController.RefreshToken (API)'
+2026-06-14 16:27:53.768 +05:30 [INF] Route matched with {action = "RefreshToken", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RefreshToken(Application.DTOs.RefreshTokenRequestDto) on controller API.Controllers.AuthController (API).
+2026-06-14 16:27:54.383 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-06-14 16:27:54.442 +05:30 [INF] Executed action API.Controllers.AuthController.RefreshToken (API) in 644.3492ms
+2026-06-14 16:27:54.558 +05:30 [INF] Executed endpoint 'API.Controllers.AuthController.RefreshToken (API)'
+2026-06-14 16:27:54.562 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7169/api/Auth/refresh-token - 200 null application/json; charset=utf-8 2240.7325ms

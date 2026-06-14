@@ -55,4 +55,27 @@ public class AuthController : ControllerBase
                     .WriteToken(token)
         });
     }
+
+    [HttpPost("refresh-token")]
+    public IActionResult RefreshToken(
+    RefreshTokenRequestDto request)
+    {
+        if (string.IsNullOrWhiteSpace(
+            request.RefreshToken))
+        {
+            return BadRequest();
+        }
+
+        var accessToken =
+            Guid.NewGuid().ToString();
+
+        var refreshToken =
+            Guid.NewGuid().ToString();
+
+        return Ok(new
+        {
+            AccessToken = accessToken,
+            RefreshToken = refreshToken
+        });
+    }
 }
