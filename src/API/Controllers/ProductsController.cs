@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Services;
 using Microsoft.AspNetCore.Mvc;
+using Application.Validators;
 
 namespace API.Controllers
 {
@@ -25,6 +26,7 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
+
             var product =
                 await _productService.GetByIdAsync(id);
 
@@ -38,6 +40,13 @@ namespace API.Controllers
         public async Task<IActionResult> Create(
             CreateProductDto dto)
         {
+            var validator = new CreateProductValidator();
+
+            var result = await validator.ValidateAsync(dto);
+
+            if (!result.IsValid)
+                return BadRequest(result.Errors);
+
             var id =
                 await _productService.CreateAsync(dto);
 
