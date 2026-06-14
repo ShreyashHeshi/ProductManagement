@@ -5,29 +5,32 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A43DE1D8-5BEA-41B1-B2C2-EE68D1810CE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{75578F5D-AF97-439D-BC83-39D34C77027A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{75578F5D-AF97-439D-BC83-39D34C77027A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "src\Application\Application.csproj", "{6E1FE4FD-88D0-4685-8603-008F7FA4804C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{6E1FE4FD-88D0-4685-8603-008F7FA4804C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{E1D0214B-6399-4AC9-8300-DB271C29DADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{E1D0214B-6399-4AC9-8300-DB271C29DADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{15F0475E-485F-4C96-9DA1-D2777F288D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{15F0475E-485F-4C96-9DA1-D2777F288D1F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1838F836-FA2C-46BA-B727-CB354B529613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Tests", "tests\API.Tests\API.Tests.csproj", "{83B446A5-4D69-4A7B-8AEB-F02A8E0D64B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Tests", "tests\API.Tests\API.Tests.csproj", "{83B446A5-4D69-4A7B-8AEB-F02A8E0D64B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Tests", "tests\Application.Tests\Application.Tests.csproj", "{6FDEC56C-63A1-4D4A-B979-CF4C41BCC749}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Tests", "tests\Application.Tests\Application.Tests.csproj", "{6FDEC56C-63A1-4D4A-B979-CF4C41BCC749}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Tests", "tests\Infrastructure.Tests\Infrastructure.Tests.csproj", "{28827787-E327-4421-B9B3-7771830B7FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.Tests", "tests\Infrastructure.Tests\Infrastructure.Tests.csproj", "{28827787-E327-4421-B9B3-7771830B7FC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BA8187D-2804-4CA7-9950-DCDD4C788792}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{75578F5D-AF97-439D-BC83-39D34C77027A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -59,6 +62,9 @@ Global
 		{28827787-E327-4421-B9B3-7771830B7FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28827787-E327-4421-B9B3-7771830B7FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{75578F5D-AF97-439D-BC83-39D34C77027A} = {A43DE1D8-5BEA-41B1-B2C2-EE68D1810CE4}
 		{6E1FE4FD-88D0-4685-8603-008F7FA4804C} = {A43DE1D8-5BEA-41B1-B2C2-EE68D1810CE4}
@@ -67,5 +73,8 @@ Global
 		{83B446A5-4D69-4A7B-8AEB-F02A8E0D64B3} = {1838F836-FA2C-46BA-B727-CB354B529613}
 		{6FDEC56C-63A1-4D4A-B979-CF4C41BCC749} = {1838F836-FA2C-46BA-B727-CB354B529613}
 		{28827787-E327-4421-B9B3-7771830B7FC3} = {1838F836-FA2C-46BA-B727-CB354B529613}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB99570C-5D20-4E58-8755-30524B26A549}
 	EndGlobalSection
 EndGlobal
