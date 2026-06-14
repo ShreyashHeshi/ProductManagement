@@ -2,11 +2,15 @@
 using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using Application.Validators;
+using Microsoft.AspNetCore.Authorization;
+using Asp.Versioning;
 
 namespace API.Controllers
 {
+    [Authorize]
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProductsController : ControllerBase
     {
         private readonly IProductService _productService;
